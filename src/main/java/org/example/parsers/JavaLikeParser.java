@@ -19,8 +19,8 @@ public class JavaLikeParser extends JavaBaseListener {
 
             data += text;
         }
-        String txtFile = "program.txt";
-        String javaFile = "program.java";
+        String txtFile = "app.txt";
+        String javaFile = "app.java";
 
         try {
             FileWriter writerTxt = new FileWriter(txtFile);
@@ -29,9 +29,9 @@ public class JavaLikeParser extends JavaBaseListener {
             FileWriter writerJava = new FileWriter(javaFile);
             writerJava.write(data);
             writerJava.close();
-            System.out.println("Dane zostały zapisane do plików " + txtFile + " i " + javaFile);
+            System.out.println("The data has been saved to files " + txtFile + " and " + javaFile);
         } catch (IOException e) {
-            System.out.println("Wystąpił błąd podczas zapisywania do plików.");
+            System.out.println("An error occurred while saving to files.");
             e.printStackTrace();
         }
     }
