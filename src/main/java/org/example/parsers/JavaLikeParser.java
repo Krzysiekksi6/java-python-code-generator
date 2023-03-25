@@ -19,8 +19,8 @@ public class JavaLikeParser extends JavaBaseListener {
 
             data += text;
         }
-        String txtFile = "app.txt";
-        String javaFile = "app.java";
+        String txtFile = "code.txt";
+        String javaFile = "code.java";
 
         try {
             FileWriter writerTxt = new FileWriter(txtFile);
