@@ -14,13 +14,13 @@ public class JavaLikeParser extends JavaBaseListener {
     Stack<String> stack = new Stack<>();
     public void toFile() {
         String data = "";
-        for (String text:stack
-        ) {
-
-            data += text;
+        for (String s: stack) {
+            System.out.println(s);
+            data+=s;
         }
-        String txtFile = "code.txt";
-        String javaFile = "code.java";
+
+        String txtFile = "codeJava.txt";
+        String javaFile = "codeJava.java";
 
         try {
             FileWriter writerTxt = new FileWriter(txtFile);
@@ -46,21 +46,20 @@ public class JavaLikeParser extends JavaBaseListener {
                 +s2+"\n");
 
         stack.push(sb.toString());
+        sb.setLength(0);
         if(ctx.depth() ==1){
-            for (String s:stack
-            ) {
-                System.out.println(s);
-            }
 
             while(functions.size()>0){
 
-                System.out.println("\n\npublic void "+functions.get(0)+" {\n     // Add code here\n   }");
-                sb.append("\n\npublic void "+functions.get(0)+" {\n     // Add code here\n   }");
+
+                sb.append("\n\npublic void "+functions.get(0)+" {\n     // Add code here\n   }\n");
                 functions.remove(0);
             }
-            if(functions.size()>0){
+            if(functions.size()==0){
                 stack.push(sb.toString());
             }
+
+
             toFile();
 
 
@@ -100,18 +99,16 @@ public class JavaLikeParser extends JavaBaseListener {
                 +s2+"\n} else {\n   "
                 +s3+"\n}\n"+s4);
         stack.push(sb.toString());
+        sb.setLength(0);
         if(ctx.depth() ==1){
-            for (String s:stack
-            ) {
-                System.out.println(s);
-            }
+
             while(functions.size()>0){
 
-                System.out.println("\n\npublic void "+functions.get(0)+" {\n     // Add code here\n   }");
-                sb.append("\n\npublic void "+functions.get(0)+" {\n     // Add code here\n   }");
+
+                sb.append("\n\npublic void "+functions.get(0)+" {\n     // Add code here\n   }\n");
                 functions.remove(0);
             }
-            if(functions.size()>0){
+            if(functions.size()==0){
                 stack.push(sb.toString());
             }
             toFile();
@@ -128,18 +125,16 @@ public class JavaLikeParser extends JavaBaseListener {
                 +s2+"\n   "
                 +s3);
         stack.push(sb.toString());
+        sb.setLength(0);
         if(ctx.depth() ==1){
-            for (String s:stack
-            ) {
-                System.out.println(s);
-            }
+
             while(functions.size()>0){
 
-                System.out.println("\n\npublic void "+functions.get(0)+" {\n     // Add code here\n   }");
-                sb.append("\n\npublic void "+functions.get(0)+" {\n     // Add code here\n   }");
+
+                sb.append("\n\npublic void "+functions.get(0)+" {\n     // Add code here\n   }\n");
                 functions.remove(0);
             }
-            if(functions.size()>0){
+            if(functions.size()==0){
                 stack.push(sb.toString());
             }
             toFile();
@@ -158,12 +153,10 @@ public class JavaLikeParser extends JavaBaseListener {
                 +s2+"\n} else {\n   "
                 +s3+"\n}\n"+s4+"\n");
         stack.push(sb.toString());
+        sb.setLength(0);
         if(ctx.depth() ==1){
 
-            for (String s:stack
-            ) {
-                System.out.println(s);
-            }
+
         }
 
     }
@@ -179,18 +172,16 @@ public class JavaLikeParser extends JavaBaseListener {
                 +s2+"\n} else {\n   "
                 +s3+"\n}\n"+s4);
         stack.push(sb.toString());
+        sb.setLength(0);
         if(ctx.depth() ==1){
-            for (String s:stack
-            ) {
-                System.out.println(s);
-            }
+
             while(functions.size()>0){
 
-                System.out.println("\n\npublic void "+functions.get(0)+" {\n     // Add code here\n   }");
-                sb.append("\n\npublic void "+functions.get(0)+" {\n     // Add code here\n   }");
+
+                sb.append("\n\npublic void "+functions.get(0)+" {\n     // Add code here\n   }\n");
                 functions.remove(0);
             }
-            if(functions.size()>0){
+            if(functions.size()==0){
                 stack.push(sb.toString());
             }
             toFile();
@@ -210,18 +201,16 @@ public class JavaLikeParser extends JavaBaseListener {
                 "}\n"+
                 s4);
         stack.push(sb.toString());
+        sb.setLength(0);
         if(ctx.depth() ==1){
-            for (String s:stack
-            ) {
-                System.out.println(s);
-            }
+
             while(functions.size()>0){
 
-                System.out.println("\n\npublic void "+functions.get(0)+" {\n     // Add code here\n   }");
-                sb.append("\n\npublic void "+functions.get(0)+" {\n     // Add code here\n   }");
+
+                sb.append("\n\npublic void "+functions.get(0)+" {\n     // Add code here\n   }\n");
                 functions.remove(0);
             }
-            if(functions.size()>0){
+            if(functions.size()==0){
                 stack.push(sb.toString());
             }
             toFile();
@@ -240,18 +229,16 @@ public class JavaLikeParser extends JavaBaseListener {
                 "}while("+s3.replace(";","")+")\n" +
                 s4);
         stack.push(sb.toString());
+        sb.setLength(0);
         if(ctx.depth() ==1){
-            for (String s:stack
-            ) {
-                System.out.println(s);
-            }
+
             while(functions.size()>0){
 
-                System.out.println("\n\npublic void "+functions.get(0)+" {\n     // Add code here\n   }");
-                sb.append("\n\npublic void "+functions.get(0)+" {\n     // Add code here\n   }");
+
+                sb.append("\n\npublic void "+functions.get(0)+" {\n     // Add code here\n   }\n");
                 functions.remove(0);
             }
-            if(functions.size()>0){
+            if(functions.size()==0){
                 stack.push(sb.toString());
             }
             toFile();
@@ -273,21 +260,19 @@ public class JavaLikeParser extends JavaBaseListener {
                 "   @Override\n" +
                 "   public void run() {\n   "+s3+"\n   }\n" +
                 "});\n" +
-                "thread1.start();\n" +
-                "thread2.start();\n"+s4);
+                "thread1.start();\nthread2.start();\n" +
+                "thread1.join()\nthread2.join();\n"+s4);
         stack.push(sb.toString());
+        sb.setLength(0);
         if(ctx.depth() ==1){
-            for (String s:stack
-            ) {
-                System.out.println(s);
-            }
+
             while(functions.size()>0){
 
-                System.out.println("\n\npublic void "+functions.get(0)+" {\n     // Add code here\n   }");
-                sb.append("\n\npublic void "+functions.get(0)+" {\n     // Add code here\n   }");
+
+                sb.append("\n\npublic void "+functions.get(0)+" {\n     // Add code here\n   }\n");
                 functions.remove(0);
             }
-            if(functions.size()>0){
+            if(functions.size()==0){
                 stack.push(sb.toString());
             }
             toFile();
@@ -301,31 +286,30 @@ public class JavaLikeParser extends JavaBaseListener {
         String s3 = stack.pop();
         String s2 = stack.pop();
         String s1 = stack.pop();
-        sb.append(s1+"\nThread thread1 = new Thread(new Runnable() {\n" +
+        sb.append(s1+"\nThread thread"+ctx.depth()+"_1 = new Thread(new Runnable() {\n" +
                 "   @Override\n" +
                 "   public void run() {\n   "+s2+"\n   }\n" +
                 "});\n" +
-                "Thread thread2 = new Thread(new Runnable() {\n" +
+                "Thread thread"+ctx.depth()+"_2 = new Thread(new Runnable() {\n" +
                 "   @Override\n" +
                 "   public void run() {\n   "+s3+"\n   }\n" +
                 "});\n" +
-                "thread1.start();\n" +
-                "thread2.start();\n"+s4);
+                "thread"+ctx.depth()+"_1.start();\nthread"+ctx.depth()+"_2.start();\n" +
+                "thread"+ctx.depth()+"_1.join()\nthread"+ctx.depth()+"_2.join();\n"+s4);
         stack.push(sb.toString());
+        sb.setLength(0);
         if(ctx.depth() ==1){
-            for (String s:stack
-            ) {
-                System.out.println(s);
-            }
+
             while(functions.size()>0){
 
-                System.out.println("\n\npublic void "+functions.get(0)+" {\n     // Add code here\n   }");
-                sb.append("\n\npublic void "+functions.get(0)+" {\n     // Add code here\n   }");
+
+                sb.append("\n\npublic void "+functions.get(0)+" {\n     // Add code here\n   }\n");
                 functions.remove(0);
             }
-            if(functions.size()>0){
+            if(functions.size()==0){
                 stack.push(sb.toString());
             }
+
             toFile();
         }
     }

@@ -1,1 +1,1 @@
-Seq(int i = 0,Cond(i==10,Seq(print(i),i+=50),Seq(i = 10 % 2,i+1),return i))
+Seq(a,Cond(b,Seq(c,d),Para(e,f,Seq(g,h),i),j))

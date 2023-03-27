@@ -17,11 +17,11 @@ public interface PythonVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitPrule(PythonParser.PruleContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link PythonParser#function}.
+	 * Visit a parse tree produced by {@link PythonParser#creators}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitFunction(PythonParser.FunctionContext ctx);
+	T visitCreators(PythonParser.CreatorsContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link PythonParser#seq}.
 	 * @param ctx the parse tree
@@ -89,15 +89,21 @@ public interface PythonVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitRepeat(PythonParser.RepeatContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link PythonParser#type}.
+	 * Visit a parse tree produced by {@link PythonParser#function}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitType(PythonParser.TypeContext ctx);
+	T visitFunction(PythonParser.FunctionContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link PythonParser#arg_python}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitArg_python(PythonParser.Arg_pythonContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link PythonParser#string}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitString(PythonParser.StringContext ctx);
 }
