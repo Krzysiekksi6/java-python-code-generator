@@ -18,15 +18,15 @@ public interface PythonListener extends ParseTreeListener {
 	 */
 	void exitPrule(PythonParser.PruleContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link PythonParser#function}.
+	 * Enter a parse tree produced by {@link PythonParser#creators}.
 	 * @param ctx the parse tree
 	 */
-	void enterFunction(PythonParser.FunctionContext ctx);
+	void enterCreators(PythonParser.CreatorsContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link PythonParser#function}.
+	 * Exit a parse tree produced by {@link PythonParser#creators}.
 	 * @param ctx the parse tree
 	 */
-	void exitFunction(PythonParser.FunctionContext ctx);
+	void exitCreators(PythonParser.CreatorsContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link PythonParser#seq}.
 	 * @param ctx the parse tree
@@ -138,15 +138,15 @@ public interface PythonListener extends ParseTreeListener {
 	 */
 	void exitRepeat(PythonParser.RepeatContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link PythonParser#type}.
+	 * Enter a parse tree produced by {@link PythonParser#function}.
 	 * @param ctx the parse tree
 	 */
-	void enterType(PythonParser.TypeContext ctx);
+	void enterFunction(PythonParser.FunctionContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link PythonParser#type}.
+	 * Exit a parse tree produced by {@link PythonParser#function}.
 	 * @param ctx the parse tree
 	 */
-	void exitType(PythonParser.TypeContext ctx);
+	void exitFunction(PythonParser.FunctionContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link PythonParser#arg_python}.
 	 * @param ctx the parse tree
@@ -157,4 +157,14 @@ public interface PythonListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitArg_python(PythonParser.Arg_pythonContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link PythonParser#string}.
+	 * @param ctx the parse tree
+	 */
+	void enterString(PythonParser.StringContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PythonParser#string}.
+	 * @param ctx the parse tree
+	 */
+	void exitString(PythonParser.StringContext ctx);
 }

@@ -1,1 +1,0 @@
-Cond(def a,def a1,def a2,Seq(def A,def B))

@@ -15,4 +15,4 @@ repeat: 'Repeat' '(' arg_java ',' arg_java ',' arg_java ',' arg_java ')';
 function: CharArray '(' (arg_java',')*(arg_java)* ')';
 arg_java:  prule | function | string ;
 string: CharArray;
-CharArray: [a-zA-Z_]+ [a-zA-Z0-9_+ =!<>%?]*;
+CharArray: [a-zA-Z0-9_]+ [a-zA-Z0-9_+ =!<>%?]*;

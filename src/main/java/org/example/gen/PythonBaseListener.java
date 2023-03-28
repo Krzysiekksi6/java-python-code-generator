@@ -29,13 +29,13 @@ public class PythonBaseListener implements PythonListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterFunction(PythonParser.FunctionContext ctx) { }
+	@Override public void enterCreators(PythonParser.CreatorsContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitFunction(PythonParser.FunctionContext ctx) { }
+	@Override public void exitCreators(PythonParser.CreatorsContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -173,13 +173,13 @@ public class PythonBaseListener implements PythonListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterType(PythonParser.TypeContext ctx) { }
+	@Override public void enterFunction(PythonParser.FunctionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitType(PythonParser.TypeContext ctx) { }
+	@Override public void exitFunction(PythonParser.FunctionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -192,6 +192,18 @@ public class PythonBaseListener implements PythonListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitArg_python(PythonParser.Arg_pythonContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterString(PythonParser.StringContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitString(PythonParser.StringContext ctx) { }
 
 	/**
 	 * {@inheritDoc}
