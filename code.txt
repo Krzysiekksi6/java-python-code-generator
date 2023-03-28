@@ -1,12 +1,12 @@
 int i = 0;
 if(i==10) {
-   print(i);
+   print i;
 i+=50;
 
 } else {
    i = 10 % 2;
-i+1;
+i++;
 
 }
-return i;
+return new Integer;
 

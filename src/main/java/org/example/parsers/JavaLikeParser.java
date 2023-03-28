@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Stack;
 
 public class JavaLikeParser extends JavaBaseListener {
-    List<String> functions =  new ArrayList<String>();
+    List<String> functions =  new ArrayList<>();
     Stack<String> stack = new Stack<>();
     public void toFile() {
         String data = "";
