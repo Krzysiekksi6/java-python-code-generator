@@ -101,6 +101,12 @@ public interface PythonVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitArg_python(PythonParser.Arg_pythonContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link PythonParser#special_String}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSpecial_String(PythonParser.Special_StringContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link PythonParser#string}.
 	 * @param ctx the parse tree
 	 * @return the visitor result

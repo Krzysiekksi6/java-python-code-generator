@@ -13,6 +13,7 @@ choice: 'Choice' '(' arg_python ',' arg_python ',' arg_python ',' arg_python ')'
 seqSeq: 'SeqSeq' '(' arg_python ',' arg_python ',' arg_python ')';
 repeat: 'Repeat' '(' arg_python ',' arg_python ',' arg_python ',' arg_python ')';
 function: CharArray '(' (arg_python',')*(arg_python)* ')';
-arg_python:  prule | function | string ;
+arg_python:  prule | function | string |special_String;
+special_String:'#'CharArray'#';
 string: CharArray;
 CharArray: [a-zA-Z0-9_]+ [a-zA-Z0-9_+ =!<>%?]*;

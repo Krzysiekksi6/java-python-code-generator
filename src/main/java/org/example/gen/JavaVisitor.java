@@ -101,6 +101,12 @@ public interface JavaVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitArg_java(JavaParser.Arg_javaContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link JavaParser#special_String}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSpecial_String(JavaParser.Special_StringContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link JavaParser#string}.
 	 * @param ctx the parse tree
 	 * @return the visitor result

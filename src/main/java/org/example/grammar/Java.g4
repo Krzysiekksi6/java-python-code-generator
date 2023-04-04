@@ -13,6 +13,7 @@ choice: 'Choice' '(' arg_java ',' arg_java ',' arg_java ',' arg_java ')';
 seqSeq: 'SeqSeq' '(' arg_java ',' arg_java ',' arg_java ')';
 repeat: 'Repeat' '(' arg_java ',' arg_java ',' arg_java ',' arg_java ')';
 function: CharArray '(' (arg_java',')*(arg_java)* ')';
-arg_java:  prule | function | string ;
+arg_java:  prule | function | string |special_String;
+special_String:'#'CharArray'#';
 string: CharArray;
 CharArray: [a-zA-Z0-9_]+ [a-zA-Z0-9_+ =!<>%?]*;

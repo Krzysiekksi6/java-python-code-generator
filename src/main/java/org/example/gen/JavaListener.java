@@ -158,6 +158,16 @@ public interface JavaListener extends ParseTreeListener {
 	 */
 	void exitArg_java(JavaParser.Arg_javaContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link JavaParser#special_String}.
+	 * @param ctx the parse tree
+	 */
+	void enterSpecial_String(JavaParser.Special_StringContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link JavaParser#special_String}.
+	 * @param ctx the parse tree
+	 */
+	void exitSpecial_String(JavaParser.Special_StringContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link JavaParser#string}.
 	 * @param ctx the parse tree
 	 */
