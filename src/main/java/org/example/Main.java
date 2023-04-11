@@ -1,20 +1,6 @@
 package org.example;
-
-import org.antlr.v4.runtime.tree.ParseTree;
-import org.antlr.v4.runtime.tree.ParseTreeWalker;
-import org.antlr.v4.runtime.CharStream;
-import org.antlr.v4.runtime.CommonTokenStream;
-import org.antlr.v4.runtime.*;
-import org.example.gen.JavaLexer;
-import org.example.gen.JavaParser;
-import org.example.gen.PythonLexer;
-import org.example.gen.PythonParser;
 import org.example.io.DataReader;
-import org.example.parsers.JavaLikeParser;
-import org.example.parsers.PythonLikeParser;
-
 import java.io.IOException;
-
 import static org.example.functions.GenJava.GenJava;
 import static org.example.functions.GenPython.GenPython;
 
@@ -43,13 +29,11 @@ public class Main {
             System.out.println("\n\n\n\n");
             switch (option) {
                 case JAVA -> {
-
                     GenJava(null);
                 }
                 case PYTHON -> {
                     GenPython(null);
                 }
-
                 case EXIT -> {
                     dataReader.close();
                     System.out.println("Bye, Bye!");
@@ -58,8 +42,6 @@ public class Main {
             }
             System.out.println("\n\n\n\n");
         }while(option != EXIT);
-
-
     }
 
     private static void printOptions() {
