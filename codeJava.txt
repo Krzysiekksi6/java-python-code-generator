@@ -1,6 +1,6 @@
 int i = 0;
 if(i==10) {
-   print i;
+   print();
 i+=50;
 
 } else {
@@ -10,3 +10,8 @@ i++;
 }
 return new Integer;
 
+
+
+public void print() {
+     // Add code here
+   }

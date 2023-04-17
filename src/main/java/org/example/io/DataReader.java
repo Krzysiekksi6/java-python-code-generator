@@ -11,6 +11,10 @@ public class DataReader {
         return number;
     }
 
+    public String getString(){
+        return sc.nextLine();
+    }
+
     public void close() {
         sc.close();
     }

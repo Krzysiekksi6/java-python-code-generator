@@ -22,6 +22,7 @@ public class Main {
         DataReader dataReader = new DataReader();
 
         int option;
+        String s;
         do {
             printOptions();
             option = dataReader.getInt();
@@ -29,6 +30,9 @@ public class Main {
             System.out.println("\n\n\n\n");
             switch (option) {
                 case JAVA -> {
+                    System.out.println("Enter s");
+                    s = dataReader.getString();
+                    System.out.println("Our s is: " + s);
                     GenJava(null);
                 }
                 case PYTHON -> {
