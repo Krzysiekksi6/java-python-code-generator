@@ -23,6 +23,7 @@ public class Main {
         final int JAVA = 1;
         final int PYTHON = 2;
         DataReader dataReader = new DataReader();
+        String results;
         int option;
         do {
             printOptions();
@@ -34,13 +35,13 @@ public class Main {
                 case JAVA -> {
                     UUID = dataReader.getString();
                     System.out.print("\n");
-                    genJava(null, UUID);
+                    results = genJava(null, UUID);
 
                 }
                 case PYTHON -> {
                     UUID = dataReader.getString();
                     System.out.print("\n");
-                    genPython(null, UUID);
+                    results = genPython(null, UUID);
 
                 }
                 case EXIT -> {

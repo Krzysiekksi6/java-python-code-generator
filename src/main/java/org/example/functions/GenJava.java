@@ -12,7 +12,7 @@ import org.example.parsers.JavaLikeParser;
 import java.io.IOException;
 
 public class GenJava {
-    public static void genJava(String input, String UUID) throws IOException {
+    public static String genJava(String input, String UUID) throws IOException {
         CharStream in;
         String[] split;
         if (input != null) {
@@ -42,7 +42,6 @@ public class GenJava {
         JavaLikeParser listener = new JavaLikeParser();
         javaWalker.walk(listener, tree);
 
-        //Return string
-        //System.out.print(JavaLikeParser.getResult());
+        return JavaLikeParser.getResult();
     }
 }

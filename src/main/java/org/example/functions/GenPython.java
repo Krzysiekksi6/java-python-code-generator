@@ -12,7 +12,7 @@ import org.example.parsers.PythonLikeParser;
 import java.io.IOException;
 
 public class GenPython {
-    public static void genPython(String input, String UUID) throws IOException {
+    public static String genPython(String input, String UUID) throws IOException {
         CharStream in;
         String[] split;
         if (input != null) {
@@ -42,6 +42,6 @@ public class GenPython {
         PythonLikeParser listenerPython = new PythonLikeParser();
         walkerPython.walk(listenerPython, treePython);
         //Return string
-        //System.out.print(PythonLikeParser.getResult());
+        return PythonLikeParser.getResult();
     }
 }
