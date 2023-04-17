@@ -146,9 +146,7 @@ public class JavaLikeParser extends JavaBaseListener {
                 sb.append("\n\npublic void "+functions.get(0)+" {\n     // Add code here\n   }\n");
                 functions.remove(0);
             }
-            if(functions.size()==0){
-                stack.push(sb.toString());
-            }
+            if(functions.size()==0) stack.push(sb.toString());
             toFile();
         }
 
