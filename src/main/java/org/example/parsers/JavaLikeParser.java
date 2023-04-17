@@ -73,6 +73,30 @@ public class JavaLikeParser extends JavaBaseListener {
         }
 
     }
+    @Override
+    public void exitAlt(JavaParser.AltContext ctx){
+        StringBuilder sb = new StringBuilder();
+
+        String s2 = stack.pop();
+        String s1 = stack.pop();
+        sb.append("if(").append(s1.replace(";","")).append("){\n ").append(s2).append("\n}\n");
+
+        stack.push(sb.toString());
+        sb.setLength(0);
+        if (ctx.depth() == 1) {
+
+            while (functions.size() > 0) {
+
+
+                sb.append("\n\npublic void ").append(functions.get(0)).append(" {\n     // Add code here\n   }\n");
+                functions.remove(0);
+            }
+            if (functions.size() == 0) {
+                stack.push(sb.toString());
+            }
+            toFile();
+        }
+    }
 
     @Override
     public void exitFunction(JavaParser.FunctionContext ctx) {

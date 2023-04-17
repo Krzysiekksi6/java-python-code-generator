@@ -1,6 +1,7 @@
 package org.example.parsers;
 
 
+import org.example.gen.JavaParser;
 import org.example.gen.PythonBaseListener;
 import org.example.gen.PythonParser;
 
@@ -85,6 +86,30 @@ public class PythonLikeParser extends PythonBaseListener {
             toFile();
         }
 
+    }
+    @Override
+    public void exitAlt(PythonParser.AltContext ctx){
+        StringBuilder sb = new StringBuilder();
+
+        String s2 = stack.pop();
+        String s1 = stack.pop();
+        sb.append("if(").append(s1).append("):\n ").append(s2).append("\n");
+
+        stack.push(sb.toString());
+        sb.setLength(0);
+        if (ctx.depth() == 1) {
+
+            while (functions.size() > 0) {
+
+
+                sb.append("\n\npublic void ").append(functions.get(0)).append(" {\n     // Add code here\n   }\n");
+                functions.remove(0);
+            }
+            if (functions.size() == 0) {
+                stack.push(sb.toString());
+            }
+            toFile();
+        }
     }
 
     @Override

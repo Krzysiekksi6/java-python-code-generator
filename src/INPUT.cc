@@ -1,1 +1,1 @@
-Cond(arg1,Seq(B,Seq(B,C)),Seq(B,C),arg4)
+Alt(atomic1,atomic2)

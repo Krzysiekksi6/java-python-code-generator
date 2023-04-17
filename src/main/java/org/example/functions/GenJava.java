@@ -28,6 +28,7 @@ public class GenJava {
         JavaLikeParser.SetUUID(UUID);
         ParseTree tree = switch (split[0]) {
             case "Seq" -> parser.seq();
+            case "Alt" -> parser.alt();
             case "Branch" -> parser.branch();
             case "Concur" -> parser.concur();
             case "Cond" -> parser.cond();

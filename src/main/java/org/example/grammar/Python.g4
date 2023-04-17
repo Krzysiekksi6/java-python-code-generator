@@ -1,7 +1,8 @@
 grammar Python;
 prule: creators;
-creators:  seq | branch  | concur  | cond | para | loop | choice | seqSeq | repeat ;
+creators:  seq |alt| branch  | concur  | cond | para | loop | choice | seqSeq | repeat ;
 seq: 'Seq' twoArguments;
+alt: 'Alt' twoArguments;
 branch: 'Branch' '(' arg_python ',' branchRe ')';
 branchRe: 'BranchRe' threeArguments;
 concur: 'Concur' '(' arg_python ',' concurRe ')';

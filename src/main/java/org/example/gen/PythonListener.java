@@ -38,6 +38,16 @@ public interface PythonListener extends ParseTreeListener {
 	 */
 	void exitSeq(PythonParser.SeqContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link PythonParser#alt}.
+	 * @param ctx the parse tree
+	 */
+	void enterAlt(PythonParser.AltContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PythonParser#alt}.
+	 * @param ctx the parse tree
+	 */
+	void exitAlt(PythonParser.AltContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link PythonParser#branch}.
 	 * @param ctx the parse tree
 	 */

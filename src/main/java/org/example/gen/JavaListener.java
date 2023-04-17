@@ -138,6 +138,16 @@ public interface JavaListener extends ParseTreeListener {
 	 */
 	void exitRepeat(JavaParser.RepeatContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link JavaParser#alt}.
+	 * @param ctx the parse tree
+	 */
+	void enterAlt(JavaParser.AltContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link JavaParser#alt}.
+	 * @param ctx the parse tree
+	 */
+	void exitAlt(JavaParser.AltContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link JavaParser#twoArguments}.
 	 * @param ctx the parse tree
 	 */

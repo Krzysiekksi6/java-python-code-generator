@@ -53,6 +53,18 @@ public class PythonBaseListener implements PythonListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterAlt(PythonParser.AltContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitAlt(PythonParser.AltContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterBranch(PythonParser.BranchContext ctx) { }
 	/**
 	 * {@inheritDoc}

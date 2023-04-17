@@ -29,6 +29,12 @@ public interface PythonVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitSeq(PythonParser.SeqContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link PythonParser#alt}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAlt(PythonParser.AltContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link PythonParser#branch}.
 	 * @param ctx the parse tree
 	 * @return the visitor result

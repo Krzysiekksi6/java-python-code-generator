@@ -1,6 +1,6 @@
 grammar Java;
 prule: creators;
-creators:  seq | branch | branchRe | concur | concurRe | cond | para | loop | choice | seqSeq | repeat ;
+creators:  seq | alt| branch | branchRe | concur | concurRe | cond | para | loop | choice | seqSeq | repeat ;
 seq: 'Seq' twoArguments;
 branch: 'Branch' '(' arg_java ',' branchRe ')';
 branchRe: 'BranchRe' threeArguments;
@@ -12,6 +12,7 @@ loop: 'Loop' fourArguments;
 choice: 'Choice' fourArguments;
 seqSeq: 'SeqSeq' threeArguments;
 repeat: 'Repeat' fourArguments;
+alt: 'Alt' twoArguments;
 twoArguments : '(' arg_java ',' arg_java ')';
 threeArguments : '(' arg_java ',' arg_java ',' arg_java ')';
 fourArguments : '(' arg_java ',' arg_java ',' arg_java ',' arg_java ')';
