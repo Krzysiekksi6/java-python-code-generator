@@ -14,6 +14,12 @@ public class PythonLikeParser extends PythonBaseListener {
     List<String> functions =  new ArrayList<String>();
     List<String> Treads =  new ArrayList<String>();
     Stack<String> stack = new Stack<>();
+    static String FinalString = "";
+    static String UUID = "";
+
+    public static void SetUUID(String uuid) {
+        UUID=uuid;
+    }
     public void toFile() {
         String data = "";
 
@@ -22,9 +28,9 @@ public class PythonLikeParser extends PythonBaseListener {
             System.out.println(stack.get(i));
             data+=stack.get(i);
         }
-        String txtFile = "codePython.txt";
-        String javaFile = "codePython.py";
-
+        String txtFile = "codePython_"+UUID+".txt";
+        String javaFile = "codePython_"+UUID+".py";
+        FinalString = data;
         try {
             FileWriter writerTxt = new FileWriter(txtFile);
             writerTxt.write(data);
@@ -36,7 +42,11 @@ public class PythonLikeParser extends PythonBaseListener {
         } catch (IOException e) {
             System.out.println("An error occurred while saving to files.");
             e.printStackTrace();
+            getResult();
         }
+    }
+    public static String getResult() {
+        return  FinalString;
     }
     @Override
     public void exitSeq(PythonParser.SeqContext ctx) {
@@ -189,7 +199,29 @@ public class PythonLikeParser extends PythonBaseListener {
         stack.push(sb.toString());
         sb.setLength(0);
         if(ctx.depth() ==1){
+            while(Treads.size()>0){
 
+
+                sb.append(Treads.get(0));
+                Treads.remove(0);
+            }
+            if(Treads.size()==0){
+                stack.push(sb.toString());
+                sb.setLength(0);
+            }
+            while(functions.size()>0){
+
+
+                sb.append("def "+functions.get(0)+":\n     // Add code here\n");
+                functions.remove(0);
+            }
+            if(functions.size()==0){
+                stack.push(sb.toString());
+
+            }
+
+
+            toFile();
 
         }
 

@@ -1,16 +1,9 @@
 grammar Java;
 prule: creators;
-<<<<<<< Updated upstream
-creators:  seq | branch | concur | cond | para | loop | choice | seqSeq | repeat ;
-seq: 'Seq' '(' arg_java ',' arg_java ')';
-branch: 'Branch' '(' arg_java ',' branchRe  ')';
-branchRe: 'BranchRe' '(' arg_java ',' arg_java ',' arg_java ')';
-=======
 creators:  seq | branch | branchRe | concur | concurRe | cond | para | loop | choice | seqSeq | repeat ;
 seq: 'Seq' twoArguments;
 branch: 'Branch' '(' arg_java ',' branchRe ')';
 branchRe: 'BranchRe' threeArguments;
->>>>>>> Stashed changes
 concur: 'Concur' '(' arg_java ',' concurRe ')';
 concurRe: 'ConcurRe' threeArguments;
 cond: 'Cond' fourArguments;

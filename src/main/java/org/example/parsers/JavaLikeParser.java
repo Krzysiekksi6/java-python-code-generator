@@ -12,6 +12,13 @@ import java.util.Stack;
 public class JavaLikeParser extends JavaBaseListener {
     List<String> functions =  new ArrayList<>();
     Stack<String> stack = new Stack<>();
+    static String FinalString = "";
+    static String UUID = "";
+
+    public static void SetUUID(String uuid) {
+        UUID=uuid;
+    }
+
     public void toFile() {
         String data = "";
         for (String s: stack) {
@@ -19,9 +26,9 @@ public class JavaLikeParser extends JavaBaseListener {
             data+=s;
         }
 
-        String txtFile = "codeJava.txt";
-        String javaFile = "codeJava.java";
-
+        String txtFile = "codeJava_"+UUID+".txt";
+        String javaFile = "codeJava_"+UUID+".java";
+        FinalString = data;
         try {
             FileWriter writerTxt = new FileWriter(txtFile);
             writerTxt.write(data);
@@ -33,7 +40,12 @@ public class JavaLikeParser extends JavaBaseListener {
         } catch (IOException e) {
             System.out.println("An error occurred while saving to files.");
             e.printStackTrace();
+            getResult();
         }
+    }
+
+    public static String getResult() {
+        return  FinalString;
     }
 
     @Override
@@ -157,6 +169,16 @@ public class JavaLikeParser extends JavaBaseListener {
         if(ctx.depth() ==1){
 
 
+            while(functions.size()>0){
+
+
+                sb.append("\n\npublic void "+functions.get(0)+" {\n     // Add code here\n   }\n");
+                functions.remove(0);
+            }
+            if(functions.size()==0){
+                stack.push(sb.toString());
+            }
+            toFile();
         }
 
     }

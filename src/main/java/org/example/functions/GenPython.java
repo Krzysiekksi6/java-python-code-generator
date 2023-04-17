@@ -7,12 +7,13 @@ import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.ParseTreeWalker;
 import org.example.gen.PythonLexer;
 import org.example.gen.PythonParser;
+import org.example.parsers.JavaLikeParser;
 import org.example.parsers.PythonLikeParser;
 
 import java.io.IOException;
 
 public class GenPython {
-    public static void GenPython(String input) throws IOException {
+    public static void GenPython(String input,String UUID) throws IOException {
         CharStream in;
         String split [];
         if(input != null){
@@ -30,6 +31,7 @@ public class GenPython {
         PythonLexer lexerPython = new PythonLexer(in);
         CommonTokenStream tokensPython = new CommonTokenStream(lexerPython);
         PythonParser parserPython = new PythonParser(tokensPython);
+        PythonLikeParser.SetUUID(UUID);
         ParseTree treePython = switch (split[0]) {
             case "Seq" -> parserPython.seq();
             case "Branch" -> parserPython.branch();
@@ -45,5 +47,7 @@ public class GenPython {
         ParseTreeWalker walkerPython = new ParseTreeWalker();
         PythonLikeParser listenerPython = new PythonLikeParser();
         walkerPython.walk(listenerPython, treePython);
+        //Return string
+        //System.out.print(PythonLikeParser.getResult());
     }
 }

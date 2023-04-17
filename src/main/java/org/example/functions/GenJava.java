@@ -9,10 +9,11 @@ import org.example.gen.JavaLexer;
 import org.example.gen.JavaParser;
 import org.example.parsers.JavaLikeParser;
 
+import java.io.Console;
 import java.io.IOException;
 
 public class GenJava {
-    public static void GenJava(String input) throws IOException {
+    public static void GenJava(String input,String UUID) throws IOException {
         CharStream in;
         String split [];
         if(input != null){
@@ -29,6 +30,7 @@ public class GenJava {
         JavaLexer lexer = new JavaLexer(in);
         CommonTokenStream tokens = new CommonTokenStream(lexer);
         JavaParser parser = new JavaParser(tokens);
+        JavaLikeParser.SetUUID(UUID);
         ParseTree tree = switch (split[0]) {
             case "Seq" -> parser.seq();
             case "Branch" -> parser.branch();
@@ -44,5 +46,9 @@ public class GenJava {
         ParseTreeWalker javaWalker = new ParseTreeWalker();
         JavaLikeParser listener = new JavaLikeParser();
         javaWalker.walk(listener, tree);
+
+
+        //Return string
+        //System.out.print(JavaLikeParser.getResult());
     }
 }

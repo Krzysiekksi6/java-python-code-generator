@@ -1,4 +1,4 @@
-// Generated from java-escape by ANTLR 4.11.1
+// Generated from C:/Users/kacpe/Desktop/java-python-code-generator-develop/src/main/java/org/example/grammar\Python.g4 by ANTLR 4.12.0
 package org.example.gen;
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast", "CheckReturnValue"})
 public class PythonParser extends Parser {
-	static { RuntimeMetaData.checkVersion("4.11.1", RuntimeMetaData.VERSION); }
+	static { RuntimeMetaData.checkVersion("4.12.0", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
 	protected static final PredictionContextCache _sharedContextCache =
@@ -84,7 +84,7 @@ public class PythonParser extends Parser {
 	}
 
 	@Override
-	public String getGrammarFileName() { return "java-escape"; }
+	public String getGrammarFileName() { return "Python.g4"; }
 
 	@Override
 	public String[] getRuleNames() { return ruleNames; }
@@ -1058,11 +1058,7 @@ public class PythonParser extends Parser {
 			setState(131);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-<<<<<<< Updated upstream
-			while (((_la) & ~0x3f) == 0 && ((1L << _la) & 130722L) != 0) {
-=======
 			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & 130694L) != 0)) {
->>>>>>> Stashed changes
 				{
 				{
 				setState(128);

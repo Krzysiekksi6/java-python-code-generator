@@ -1,6 +1,8 @@
 package org.example;
 import org.example.io.DataReader;
 import java.io.IOException;
+import java.util.Scanner;
+
 import static org.example.functions.GenJava.GenJava;
 import static org.example.functions.GenPython.GenPython;
 
@@ -20,19 +22,27 @@ public class Main {
         final int JAVA = 1;
         final int PYTHON = 2;
         DataReader dataReader = new DataReader();
-
         int option;
         do {
             printOptions();
             option = dataReader.getInt();
 
-            System.out.println("\n\n\n\n");
+            System.out.println("\n");
+            System.out.print("Enter UUID: ");
             switch (option) {
                 case JAVA -> {
-                    GenJava(null);
+                    Scanner scanner = new Scanner(System.in);
+                    String UUID = scanner.nextLine();
+                    System.out.print("\n");
+                    GenJava(null,UUID);
+
                 }
                 case PYTHON -> {
-                    GenPython(null);
+                    Scanner scanner = new Scanner(System.in);
+                    String UUID = scanner.nextLine();
+                    System.out.print("\n");
+                    GenPython(null,UUID);
+
                 }
                 case EXIT -> {
                     dataReader.close();
