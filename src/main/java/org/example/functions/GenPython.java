@@ -7,26 +7,20 @@ import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.ParseTreeWalker;
 import org.example.gen.PythonLexer;
 import org.example.gen.PythonParser;
-import org.example.parsers.JavaLikeParser;
 import org.example.parsers.PythonLikeParser;
 
 import java.io.IOException;
 
 public class GenPython {
-    public static void GenPython(String input,String UUID) throws IOException {
+    public static void genPython(String input, String UUID) throws IOException {
         CharStream in;
-        String split [];
-        if(input != null){
+        String[] split;
+        if (input != null) {
             in = CharStreams.fromString(input);
-            split = in.toString().split("[(]",2);
-        }else{
+        } else {
             in = CharStreams.fromFileName("src/INPUT.cc");
-            split = in.toString().split("[(]",2);
         }
-        /**
-         * Generate PYTHON code
-         *
-         */
+        split = in.toString().split("[(]", 2);
 
         PythonLexer lexerPython = new PythonLexer(in);
         CommonTokenStream tokensPython = new CommonTokenStream(lexerPython);
