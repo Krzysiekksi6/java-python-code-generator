@@ -138,6 +138,36 @@ public interface JavaListener extends ParseTreeListener {
 	 */
 	void exitRepeat(JavaParser.RepeatContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link JavaParser#twoArguments}.
+	 * @param ctx the parse tree
+	 */
+	void enterTwoArguments(JavaParser.TwoArgumentsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link JavaParser#twoArguments}.
+	 * @param ctx the parse tree
+	 */
+	void exitTwoArguments(JavaParser.TwoArgumentsContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link JavaParser#threeArguments}.
+	 * @param ctx the parse tree
+	 */
+	void enterThreeArguments(JavaParser.ThreeArgumentsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link JavaParser#threeArguments}.
+	 * @param ctx the parse tree
+	 */
+	void exitThreeArguments(JavaParser.ThreeArgumentsContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link JavaParser#fourArguments}.
+	 * @param ctx the parse tree
+	 */
+	void enterFourArguments(JavaParser.FourArgumentsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link JavaParser#fourArguments}.
+	 * @param ctx the parse tree
+	 */
+	void exitFourArguments(JavaParser.FourArgumentsContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link JavaParser#function}.
 	 * @param ctx the parse tree
 	 */

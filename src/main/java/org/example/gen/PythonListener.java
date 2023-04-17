@@ -138,6 +138,36 @@ public interface PythonListener extends ParseTreeListener {
 	 */
 	void exitRepeat(PythonParser.RepeatContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link PythonParser#twoArguments}.
+	 * @param ctx the parse tree
+	 */
+	void enterTwoArguments(PythonParser.TwoArgumentsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PythonParser#twoArguments}.
+	 * @param ctx the parse tree
+	 */
+	void exitTwoArguments(PythonParser.TwoArgumentsContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link PythonParser#threeArguments}.
+	 * @param ctx the parse tree
+	 */
+	void enterThreeArguments(PythonParser.ThreeArgumentsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PythonParser#threeArguments}.
+	 * @param ctx the parse tree
+	 */
+	void exitThreeArguments(PythonParser.ThreeArgumentsContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link PythonParser#fourArguments}.
+	 * @param ctx the parse tree
+	 */
+	void enterFourArguments(PythonParser.FourArgumentsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PythonParser#fourArguments}.
+	 * @param ctx the parse tree
+	 */
+	void exitFourArguments(PythonParser.FourArgumentsContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link PythonParser#function}.
 	 * @param ctx the parse tree
 	 */

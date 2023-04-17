@@ -89,6 +89,24 @@ public interface PythonVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitRepeat(PythonParser.RepeatContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link PythonParser#twoArguments}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitTwoArguments(PythonParser.TwoArgumentsContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link PythonParser#threeArguments}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitThreeArguments(PythonParser.ThreeArgumentsContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link PythonParser#fourArguments}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitFourArguments(PythonParser.FourArgumentsContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link PythonParser#function}.
 	 * @param ctx the parse tree
 	 * @return the visitor result

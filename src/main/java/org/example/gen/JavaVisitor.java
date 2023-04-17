@@ -89,6 +89,24 @@ public interface JavaVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitRepeat(JavaParser.RepeatContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link JavaParser#twoArguments}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitTwoArguments(JavaParser.TwoArgumentsContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link JavaParser#threeArguments}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitThreeArguments(JavaParser.ThreeArgumentsContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link JavaParser#fourArguments}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitFourArguments(JavaParser.FourArgumentsContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link JavaParser#function}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
