@@ -18,6 +18,9 @@ public class PythonLikeParser extends PythonBaseListener {
     static String FinalString = "";
     static String UUID = "";
 
+    boolean isBranch= false;
+    boolean isConcur= false;
+
     public static void SetUUID(String uuid) {
         UUID = uuid;
     }
@@ -56,10 +59,23 @@ public class PythonLikeParser extends PythonBaseListener {
     public void exitSeq(PythonParser.SeqContext ctx) {
         StringBuilder sb = new StringBuilder();
 
-        String s2 = stack.pop();
-        String s1 = stack.pop();
-        sb.append(s1).append("\n").append(s2).append("\n");
+        if(isBranch||isConcur){
 
+            String s1 = stack.pop();
+
+            sb.append(s1).append("\n");
+            if(isBranch){
+                isBranch= false;
+            }else{
+                isConcur= false;
+            }
+
+        }else {
+            String s2 = stack.pop();
+            String s1 = stack.pop();
+
+            sb.append(s1).append("\n").append(s2).append("\n");
+        }
         stack.push(sb.toString());
         sb.setLength(0);
         if (ctx.depth() == 1) {
@@ -136,15 +152,26 @@ public class PythonLikeParser extends PythonBaseListener {
     }
 
     @Override
-    public void exitBranch(PythonParser.BranchContext ctx) {
+    public void exitBranchRe(PythonParser.BranchReContext ctx) {
+        isBranch = true;
         StringBuilder sb = new StringBuilder();
-
+        String s6 = stack.pop();
+        String s5 = stack.pop();
         String s4 = stack.pop();
         String s3 = stack.pop();
         String s2 = stack.pop();
         String s1 = stack.pop();
-        sb.append("if ").append(s1.replace(";", "")).append(":\n   ").append(s2).append("\nelse:\n   ").append(s3).append("\n").append(s4);
-        stack.push(sb.toString());
+        sb.append("if(").append(s1)
+                .append(") :\n   ")
+                .append(s2)
+                .append("\n   ")
+                .append(s4)
+                .append("\nelse:\n   ")
+                .append(s3)
+                .append("\n   ")
+                .append(s5)
+                .append("\n}\n")
+                .append(s6);stack.push(sb.toString());
         sb.setLength(0);
         if (ctx.depth() == 1) {
             while (Treads.size() > 0) {
@@ -321,16 +348,27 @@ public class PythonLikeParser extends PythonBaseListener {
     }
 
     @Override
-    public void exitConcur(PythonParser.ConcurContext ctx) {
+    public void exitConcurRe(PythonParser.ConcurReContext ctx) {
+        isConcur = true;
         StringBuilder sb = new StringBuilder();
-
+        String s6 = stack.pop();
+        String s5 = stack.pop();
         String s4 = stack.pop();
         String s3 = stack.pop();
         String s2 = stack.pop();
         String s1 = stack.pop();
         int num = Treads.size() * 2;
-        Treads.add("\ndef Thread" + num + "():\n    " + s2 + "\n\ndef Thread" + (num + 1) + "():\n    " + s3 + "\n");
-        sb.append(s1).append("\nthread1 = threading.Thread(target=Thread").append(num).append(")").append("\nthread2 = threading.Thread(target=Thread").append(num + 1).append(")").append("\nthread1.start()\nthread2.start()\n").append("thread1.join()\nthread2.join()\n").append(s4);
+        Treads.add("\ndef Thread" + num + "():\n    " + s2 +"\n    " + s4 + "\n\ndef Thread" + (num + 1) + "():\n    " + s3 +"\n    " + s5 + "\n");
+        sb.append(s1)
+                .append("\nthread1 = threading.Thread(target=Thread")
+                .append(num)
+                .append(")")
+                .append("\nthread2 = threading.Thread(target=Thread")
+                .append(num + 1)
+                .append(")")
+                .append("\nthread1.start()\nthread2.start()\n")
+                .append("thread1.join()\nthread2.join()\n")
+                .append(s6);
         stack.push(sb.toString());
         sb.setLength(0);
         if (ctx.depth() == 1) {

@@ -14,6 +14,8 @@ public class JavaLikeParser extends JavaBaseListener {
     Stack<String> stack = new Stack<>();
     static String FinalString = "";
     static String UUID = "";
+    boolean isBranch= false;
+    boolean isConcur= false;
 
     public static void SetUUID(String uuid) {
         UUID = uuid;
@@ -51,11 +53,22 @@ public class JavaLikeParser extends JavaBaseListener {
     @Override
     public void exitSeq(JavaParser.SeqContext ctx) {
         StringBuilder sb = new StringBuilder();
+        if(isBranch||isConcur){
 
-        String s2 = stack.pop();
-        String s1 = stack.pop();
-        sb.append(s1).append("\n").append(s2).append("\n");
+            String s1 = stack.pop();
 
+            sb.append(s1).append("\n");
+            if(isBranch){
+                isBranch= false;
+            }else{
+                isConcur= false;
+            }
+        }else {
+            String s2 = stack.pop();
+            String s1 = stack.pop();
+
+            sb.append(s1).append("\n").append(s2).append("\n");
+        }
         stack.push(sb.toString());
         sb.setLength(0);
         if (ctx.depth() == 1) {
@@ -122,14 +135,26 @@ public class JavaLikeParser extends JavaBaseListener {
     }
 
     @Override
-    public void exitBranch(JavaParser.BranchContext ctx) {
+    public void exitBranchRe(JavaParser.BranchReContext ctx) {
+        isBranch = true;
         StringBuilder sb = new StringBuilder();
-
+        String s6 = stack.pop();
+        String s5 = stack.pop();
         String s4 = stack.pop();
         String s3 = stack.pop();
         String s2 = stack.pop();
         String s1 = stack.pop();
-        sb.append("if(").append(s1.replace(";", "")).append(") {\n   ").append(s2).append("\n} else {\n   ").append(s3).append("\n}\n").append(s4);
+        sb.append("if(").append(s1.replace(";", ""))
+                .append(") {\n   ")
+                .append(s2)
+                .append("\n   ")
+                .append(s4)
+                .append("\n} else {\n   ")
+                .append(s3)
+                .append("\n   ")
+                .append(s5)
+                .append("\n}\n")
+                .append(s6);
         stack.push(sb.toString());
         sb.setLength(0);
         if (ctx.depth() == 1) {
@@ -276,14 +301,35 @@ public class JavaLikeParser extends JavaBaseListener {
     }
 
     @Override
-    public void exitConcur(JavaParser.ConcurContext ctx) {
+    public void exitConcurRe(JavaParser.ConcurReContext ctx) {
+        isConcur = true;
         StringBuilder sb = new StringBuilder();
-
+        String s6 = stack.pop();
+        String s5 = stack.pop();
         String s4 = stack.pop();
         String s3 = stack.pop();
         String s2 = stack.pop();
         String s1 = stack.pop();
-        sb.append(s1).append("\nThread thread1 = new Thread(new Runnable() {\n").append("   @Override\n").append("   public void run() {\n   ").append(s2).append("\n   }\n").append("});\n").append("Thread thread2 = new Thread(new Runnable() {\n").append("   @Override\n").append("   public void run() {\n   ").append(s3).append("\n   }\n").append("});\n").append("thread1.start();\nthread2.start();\n").append("thread1.join()\nthread2.join();\n").append(s4);
+        sb.append(s1)
+                .append("\nThread thread1 = new Thread(new Runnable() {\n")
+                .append("   @Override\n")
+                .append("   public void run() {\n   ")
+                .append(s2)
+                .append("\n   ")
+                .append(s4)
+                .append("\n   }\n")
+                .append("});\n")
+                .append("Thread thread2 = new Thread(new Runnable() {\n")
+                .append("   @Override\n")
+                .append("   public void run() {\n   ")
+                .append(s3)
+                .append("\n   ")
+                .append(s5)
+                .append("\n   }\n")
+                .append("});\n")
+                .append("thread1.start();\nthread2.start();\n")
+                .append("thread1.join()\nthread2.join();\n")
+                .append(s6);
         stack.push(sb.toString());
         sb.setLength(0);
         if (ctx.depth() == 1) {
