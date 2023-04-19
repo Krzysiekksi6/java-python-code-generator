@@ -1,4 +1,4 @@
-// Generated from C:/Users/kacpe/Desktop/java-python-code-generator-develop/src/main/java/org/example/grammar\Python.g4 by ANTLR 4.12.0
+// Generated from C:/Users/kacpe/Desktop/java-python-code-generator-release3/src/main/java/org/example/grammar\Python.g4 by ANTLR 4.12.0
 package org.example.gen;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
@@ -38,15 +38,45 @@ public interface PythonListener extends ParseTreeListener {
 	 */
 	void exitSeq(PythonParser.SeqContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link PythonParser#alt}.
+	 * Enter a parse tree produced by {@link PythonParser#seqoptions}.
 	 * @param ctx the parse tree
 	 */
-	void enterAlt(PythonParser.AltContext ctx);
+	void enterSeqoptions(PythonParser.SeqoptionsContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link PythonParser#alt}.
+	 * Exit a parse tree produced by {@link PythonParser#seqoptions}.
 	 * @param ctx the parse tree
 	 */
-	void exitAlt(PythonParser.AltContext ctx);
+	void exitSeqoptions(PythonParser.SeqoptionsContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link PythonParser#seqPrime}.
+	 * @param ctx the parse tree
+	 */
+	void enterSeqPrime(PythonParser.SeqPrimeContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PythonParser#seqPrime}.
+	 * @param ctx the parse tree
+	 */
+	void exitSeqPrime(PythonParser.SeqPrimeContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link PythonParser#seqBranch}.
+	 * @param ctx the parse tree
+	 */
+	void enterSeqBranch(PythonParser.SeqBranchContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PythonParser#seqBranch}.
+	 * @param ctx the parse tree
+	 */
+	void exitSeqBranch(PythonParser.SeqBranchContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link PythonParser#seqConcur}.
+	 * @param ctx the parse tree
+	 */
+	void enterSeqConcur(PythonParser.SeqConcurContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PythonParser#seqConcur}.
+	 * @param ctx the parse tree
+	 */
+	void exitSeqConcur(PythonParser.SeqConcurContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link PythonParser#branch}.
 	 * @param ctx the parse tree
@@ -67,6 +97,16 @@ public interface PythonListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitBranchRe(PythonParser.BranchReContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link PythonParser#alt}.
+	 * @param ctx the parse tree
+	 */
+	void enterAlt(PythonParser.AltContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PythonParser#alt}.
+	 * @param ctx the parse tree
+	 */
+	void exitAlt(PythonParser.AltContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link PythonParser#concur}.
 	 * @param ctx the parse tree

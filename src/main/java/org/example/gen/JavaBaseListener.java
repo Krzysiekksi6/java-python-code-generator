@@ -1,4 +1,4 @@
-// Generated from C:/Users/kacpe/Desktop/java-python-code-generator-develop/src/main/java/org/example/grammar\Java.g4 by ANTLR 4.12.0
+// Generated from C:/Users/kacpe/Desktop/java-python-code-generator-release3/src/main/java/org/example/grammar\Java.g4 by ANTLR 4.12.0
 package org.example.gen;
 
 import org.antlr.v4.runtime.ParserRuleContext;
@@ -48,6 +48,54 @@ public class JavaBaseListener implements JavaListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitSeq(JavaParser.SeqContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterSeqoptions(JavaParser.SeqoptionsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitSeqoptions(JavaParser.SeqoptionsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterSeqPrime(JavaParser.SeqPrimeContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitSeqPrime(JavaParser.SeqPrimeContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterSeqBranch(JavaParser.SeqBranchContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitSeqBranch(JavaParser.SeqBranchContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterSeqConcur(JavaParser.SeqConcurContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitSeqConcur(JavaParser.SeqConcurContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

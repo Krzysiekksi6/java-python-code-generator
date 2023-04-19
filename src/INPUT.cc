@@ -1,1 +1,1 @@
-Alt(atomic1,atomic2)
+Alt(atomic1,atomic2,atomic3)

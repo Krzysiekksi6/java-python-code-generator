@@ -1,4 +1,4 @@
-// Generated from C:/Users/kacpe/Desktop/java-python-code-generator-develop/src/main/java/org/example/grammar\Java.g4 by ANTLR 4.12.0
+// Generated from C:/Users/kacpe/Desktop/java-python-code-generator-release3/src/main/java/org/example/grammar\Java.g4 by ANTLR 4.12.0
 package org.example.gen;
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
@@ -28,6 +28,30 @@ public interface JavaVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitSeq(JavaParser.SeqContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link JavaParser#seqoptions}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSeqoptions(JavaParser.SeqoptionsContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link JavaParser#seqPrime}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSeqPrime(JavaParser.SeqPrimeContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link JavaParser#seqBranch}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSeqBranch(JavaParser.SeqBranchContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link JavaParser#seqConcur}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSeqConcur(JavaParser.SeqConcurContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link JavaParser#branch}.
 	 * @param ctx the parse tree

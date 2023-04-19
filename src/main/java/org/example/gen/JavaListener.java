@@ -1,4 +1,4 @@
-// Generated from C:/Users/kacpe/Desktop/java-python-code-generator-develop/src/main/java/org/example/grammar\Java.g4 by ANTLR 4.12.0
+// Generated from C:/Users/kacpe/Desktop/java-python-code-generator-release3/src/main/java/org/example/grammar\Java.g4 by ANTLR 4.12.0
 package org.example.gen;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
@@ -37,6 +37,46 @@ public interface JavaListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitSeq(JavaParser.SeqContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link JavaParser#seqoptions}.
+	 * @param ctx the parse tree
+	 */
+	void enterSeqoptions(JavaParser.SeqoptionsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link JavaParser#seqoptions}.
+	 * @param ctx the parse tree
+	 */
+	void exitSeqoptions(JavaParser.SeqoptionsContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link JavaParser#seqPrime}.
+	 * @param ctx the parse tree
+	 */
+	void enterSeqPrime(JavaParser.SeqPrimeContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link JavaParser#seqPrime}.
+	 * @param ctx the parse tree
+	 */
+	void exitSeqPrime(JavaParser.SeqPrimeContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link JavaParser#seqBranch}.
+	 * @param ctx the parse tree
+	 */
+	void enterSeqBranch(JavaParser.SeqBranchContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link JavaParser#seqBranch}.
+	 * @param ctx the parse tree
+	 */
+	void exitSeqBranch(JavaParser.SeqBranchContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link JavaParser#seqConcur}.
+	 * @param ctx the parse tree
+	 */
+	void enterSeqConcur(JavaParser.SeqConcurContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link JavaParser#seqConcur}.
+	 * @param ctx the parse tree
+	 */
+	void exitSeqConcur(JavaParser.SeqConcurContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link JavaParser#branch}.
 	 * @param ctx the parse tree

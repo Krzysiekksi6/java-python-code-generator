@@ -1,4 +1,4 @@
-// Generated from C:/Users/kacpe/Desktop/java-python-code-generator-develop/src/main/java/org/example/grammar\Python.g4 by ANTLR 4.12.0
+// Generated from C:/Users/kacpe/Desktop/java-python-code-generator-release3/src/main/java/org/example/grammar\Python.g4 by ANTLR 4.12.0
 package org.example.gen;
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
@@ -29,11 +29,29 @@ public interface PythonVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitSeq(PythonParser.SeqContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link PythonParser#alt}.
+	 * Visit a parse tree produced by {@link PythonParser#seqoptions}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitAlt(PythonParser.AltContext ctx);
+	T visitSeqoptions(PythonParser.SeqoptionsContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link PythonParser#seqPrime}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSeqPrime(PythonParser.SeqPrimeContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link PythonParser#seqBranch}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSeqBranch(PythonParser.SeqBranchContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link PythonParser#seqConcur}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSeqConcur(PythonParser.SeqConcurContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link PythonParser#branch}.
 	 * @param ctx the parse tree
@@ -46,6 +64,12 @@ public interface PythonVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitBranchRe(PythonParser.BranchReContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link PythonParser#alt}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAlt(PythonParser.AltContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link PythonParser#concur}.
 	 * @param ctx the parse tree
